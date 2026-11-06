@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CampusConnect | Event Registration</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<header><div><h1>CampusConnect</h1><p>College events and student participation portal · DevOps lab demo</p></div><div id="sessionArea">Guest</div></header>
+<main>
+<section class="hero"><div><h2>Discover campus events</h2><div class="muted">Explore events, register in seconds and view your confirmations.</div></div><span class="pill">Project 4</span></section>
+<div id="message" class="notice hidden" role="status"></div>
+<section id="authSection" class="layout">
+ <div class="card"><h3>Student registration</h3><form id="registerForm">
+  <div class="field"><label for="regName">Full name</label><input id="regName" required minlength="2" placeholder="Student name"></div>
+  <div class="field"><label for="regEmail">Email address</label><input id="regEmail" type="email" required placeholder="student@example.com"></div>
+  <div class="field"><label for="regPassword">Password</label><input id="regPassword" type="password" required minlength="6" placeholder="At least 6 characters"></div>
+  <button type="submit">Create account</button>
+ </form></div>
+ <div class="card"><h3>Student / Admin login</h3><form id="loginForm">
+  <div class="field"><label for="loginEmail">Email</label><input id="loginEmail" type="email" required></div>
+  <div class="field"><label for="loginPassword">Password</label><input id="loginPassword" type="password" required></div>
+  <button type="submit">Login</button>
+ </form><div class="notice">Demo admin: <b>admin@events.test</b> / <b>admin123</b></div></div>
+</section>
+<section id="studentApp" class="hidden">
+ <div class="tabs"><button class="active" data-tab="events">Event listing</button><button data-tab="mine">My registrations</button><button id="logoutBtn" class="secondary">Logout</button></div>
+ <div id="eventsPanel" class="layout">
+  <div class="card"><h3>Find an event</h3>
+   <div class="field"><label for="eventSearch">Search events</label><input id="eventSearch" placeholder="Search by title or category"></div>
+   <div class="field"><label for="categoryFilter">Category</label><select id="categoryFilter"><option value="">All categories</option><option>Technology</option><option>Cultural</option><option>Sports</option><option>Workshop</option></select></div>
+  </div><div class="card"><h3>Upcoming events</h3><div id="eventList" class="list"></div></div>
+ </div>
+ <div id="minePanel" class="card hidden"><h3>My registrations</h3><div id="myRegistrations" class="list"></div></div>
+</section>
+<section id="adminApp" class="hidden">
+ <div class="tabs"><button class="active">Admin dashboard</button><button id="adminLogout" class="secondary">Logout</button></div>
+ <div class="card"><h3>Manage events</h3><form id="eventForm" class="layout">
+  <div><div class="field"><label for="eventTitle">Event title</label><input id="eventTitle" required></div><div class="field"><label for="eventCategory">Category</label><select id="eventCategory"><option>Technology</option><option>Cultural</option><option>Sports</option><option>Workshop</option></select></div></div>
+  <div><div class="field"><label for="eventDate">Date</label><input id="eventDate" type="date" required></div><div class="field"><label for="eventVenue">Venue</label><input id="eventVenue" required></div><button type="submit">Add event</button></div>
+ </form></div>
+ <div class="card"><h3>Registered participants</h3><div id="adminRegistrations"></div></div>
+</section>
+</main><footer>Academic demonstration only · Data is stored in this browser using localStorage.</footer>
+<script src="app.js"></script>
+</body></html>

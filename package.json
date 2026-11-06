@@ -1,0 +1,11 @@
+{
+  "name": "campusconnect-events-selenium",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "node tests/events.test.js"
+  },
+  "dependencies": {
+    "selenium-webdriver": "^4.27.0"
+  }
+}
